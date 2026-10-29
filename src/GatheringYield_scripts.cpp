@@ -100,6 +100,7 @@ namespace
 
     void ApplyCount(LootStoreItem* item, uint8 origMin, uint8 origMax, uint32 mult)
     {
+        // Flat multiplier on both ends. A 1–3 node at 3x becomes 3–9.
         uint32 mincount = std::min<uint32>(uint32(origMin) * mult, 255u);
         uint32 maxcount = std::min<uint32>(uint32(origMax) * mult, 255u);
         if (maxcount < mincount)
